@@ -1,0 +1,25 @@
+{
+  "options": {
+    "paths": {
+      "root": "/data",
+      "fonts": "fonts",
+      "styles": "styles",
+      "mbtiles": "/data"
+    },
+    "serveAllStyles": false,
+    "frontPage": "index.html"
+  },
+  "data": {
+    "v3": {
+      "mbtiles": "turkey.mbtiles"
+    }
+  },
+  "styles": {
+    "turkiye": {
+      "style": "basic-preview/style.json",
+      "tilejson": {
+        "bounds": [25.0, 35.0, 45.0, 43.0]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+image:
+  repository: harbor:443/liman/tileserver
+  tag: v1
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  host: "harita" # Buraya kullanacağın alan adını yaz
+  tls:
+    enabled: true
+    secretName: tileserver-tls # Adım 2'de oluşturduğumuz secret
+
+imagePullSecrets:
+  - name: harbor-auth

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Türkiye Haritası</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var bounds = [
+            [25.0, 35.0], // Sol Alt
+            [45.0, 43.0]  // Sağ Üst
+        ];
+
+        var map = new maplibregl.Map({
+            container: 'map',
+            // Config.json'daki isimle ve stil klasörüyle eşleşen yol:
+            style: '/styles/turkiye/style.json',
+            center: [35.2433, 38.9637],
+            zoom: 6,
+            minZoom: 5,
+            maxZoom: 18,
+            maxBounds: bounds,
+            renderWorldCopies: false
+        });
+
+        map.addControl(new maplibregl.NavigationControl());
+    </script>
+</body>
+</html>
